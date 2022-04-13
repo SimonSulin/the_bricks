@@ -1,3 +1,6 @@
+
+
+
 function drawIt() {
   var x = 150;
   var y = 150;
@@ -19,16 +22,21 @@ function drawIt() {
   var BRICKHEIGHT;
   var PADDING;
   var tocke; //deklaracija spremenljivke
-  var dilan;
+  var x1;
+
+ 
 
   function init() {
       ctx = $('#canvas')[0].getContext("2d");
       WIDTH = $("#canvas").width();
       HEIGHT = $("#canvas").height();
-      dilan = setInterval(draw, 10);
+      x1 = setInterval(draw, 10);
       // dodajanje kode v metodo init
       points = 0;
       $("#points").html(points);
+
+      var play_btn=document.getElementById('ply');
+        play_btn.style.display='none';
   }
 
   function circle(x, y, r) {
@@ -101,8 +109,11 @@ function drawIt() {
           if (x > paddlex && x < paddlex + paddlew) {
               dx = 8 * ((x - (paddlex + paddlew / 2)) / paddlew);
               dy = -dy;
-          } else if (y + dy > HEIGHT - r)
-              clearInterval(dilan);
+          } else if (y + dy > HEIGHT - r){
+          clearInterval(x1);
+          play_btn.style.display='block';
+            
+        }
       }
 
       x += dx;
@@ -154,3 +165,47 @@ function drawIt() {
   init_paddle();
   initbricks();
 }
+let play = document.getElementById("play");
+let audio = new Audio('audio/music.mp3');
+
+function playSong() {
+
+  audio.loop = true;
+  audio.volume = 0.4;
+  audio.play();
+  document.getElementById("play").style.display = "block";
+  document.getElementById("pause").style.display = "none";
+}
+
+function stopSong() {
+  audio.pause();
+  document.getElementById("play").style.display = "none";
+  document.getElementById("pause").style.display = "block";
+}
+
+function Sweetaleart() {
+  Swal.fire({
+      title: 'Credits',
+      toast: true,
+      text: 'Made by Simon Šulin!',
+      showConfirmButton: true,
+      position: 'center',
+  
+})
+}
+function info() {
+  Swal.fire({
+      title: 'Info',
+      toast: true,
+      text: 'To win you must destroy all of the bricks.You have to move the paddle using the left and right arrow key and bounce the ball of of it.',
+      showConfirmButton: true,
+      position: 'center',
+  
+})
+}
+function winaleart() {
+  Swal.fire({
+      title: 'You won',
+      text: 'Thank you for playing'
+      
+})}
