@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
+
     <title>The bricks</title>
 </head>
 <div class="title_c">
     <h1 class="title" id="title">FOOTBALL BRICKS</h1>
 </div>
-    <div class="wrapper">
-        <div class="points" id="points_div">
-        <img src="img/ball.png" class="ball">  <p id="points"a>0</p>
-        </div>
-        <div class="frame">
-    
-            <canvas id="canvas" width="500" height="400"></canvas>
-            </div>
-            <div id="ply">
-            <button  class="play_btn" onclick="drawIt()">Play</button>
-            </div>
+<div class="wrapper">
+    <div class="points" id="points_div">
+        <img src="img/ball.png" class="ball">
+        <p id="points" a>0</p>
+    </div>
+    <div class="frame">
+
+        <canvas id="canvas" width="500" height="400"></canvas>
+    </div>
+    <div id="ply">
+        <button class="play_btn" onclick="drawIt()">Play</button>
+    </div>
 </div>
 <div class="icons">
     <div class="info" onclick="info()">
@@ -33,14 +37,15 @@
     </div>
     <div class="info" id="play" onclick="stopSong()"><span id="up" class="material-icons">volume_up</span></div>
     <div class="info" id="pause" onclick="playSong()"><span id="off" class="material-icons">volume_off</span>
-        
-        
+
+
     </div>
 
 
-<script src="js/script.js"></script>
-<script src="js/sweetaleart_code.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="application/javascript"></script>
-</body>
+    <script src="js/script.js"></script>
+    <script src="js/sweetaleart_code.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="application/javascript"></script>
+    </body>
+
 </html>
